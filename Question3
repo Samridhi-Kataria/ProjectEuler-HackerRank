@@ -1,0 +1,22 @@
+This problem is a programming version of Problem 3 from projecteuler.net
+
+The prime factors of 13195 are 5,7,13 and 29.
+
+What is the largest prime factor of a given number N?
+
+
+Solution:-
+
+import sys
+
+
+t = int(input())
+for a0 in range(t):
+    num = int(input())
+    if num>1:
+        max_prime=0
+        for i in range(2,num+1):
+            if num%i==0:
+                max_prime=i
+                num //= i 
+        print(max_prime)
