@@ -1,0 +1,22 @@
+This problem is a programming version of Problem 4 from projecteuler.net
+
+A palindromic number reads the same both ways. The smallest 6 digit palindrome made from the product of two 3-digit numbers is 101101 = 143 * 707.
+
+Find the largest palindrome made from the product of two 3-digit numbers which is less than N.
+
+Solution:-
+
+import sys
+
+    
+Palindrom=list()
+for i in range(999, 100,-1):
+    for j in range(i,100,-1):
+        test =int(i*j)
+        if (str(test) == str(test)[::-1]):
+            Palindrom.append(test)
+Palindrom.sort()
+t = int(input().strip())
+for a0 in range(t):
+    n = int(input().strip())
+    print(max(x for x in Palindrom if x<n))
